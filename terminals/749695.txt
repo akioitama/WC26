@@ -1,0 +1,15 @@
+---
+pid: 6140
+cwd: "h:\\Projects\\WC26"
+command: "Set-Location H:\\Projects\\WC26; npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --yes"
+started_at: 2026-05-13T18:55:41.330Z
+running_for_ms: 65144    
+---
+Could not create a project called "WC26" because of npm naming restrictions:
+    * name can no longer contain capital letters
+
+---
+exit_code: 1
+elapsed_ms: 67164
+ended_at: 2026-05-13T18:56:48.494Z
+---

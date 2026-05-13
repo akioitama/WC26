@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --pitch-deep: #0a2418;
+  --pitch-mid: #123d28;
+  --pitch-bright: #1a5c3a;
+  --stripe: rgba(255, 255, 255, 0.04);
+  --chalk: #f4f7f2;
+  --gold: #d4af37;
+  --line: rgba(244, 247, 242, 0.12);
+}
+
+@theme inline {
+  --color-pitch-950: var(--pitch-deep);
+  --color-pitch-900: #0e2e1f;
+  --color-pitch-800: var(--pitch-mid);
+  --color-pitch-700: var(--pitch-bright);
+  --color-chalk: var(--chalk);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+body {
+  @apply min-h-dvh bg-pitch-950 text-chalk antialiased;
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, transparent 40%),
+    repeating-linear-gradient(
+      90deg,
+      var(--pitch-mid) 0px,
+      var(--pitch-mid) 56px,
+      var(--stripe) 56px,
+      var(--stripe) 112px
+    ),
+    radial-gradient(ellipse 120% 80% at 50% -10%, var(--pitch-bright), var(--pitch-deep));
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.35);
+  color: var(--chalk);
+}

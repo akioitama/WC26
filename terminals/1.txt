@@ -1,0 +1,6 @@
+---
+pid: 13876
+cwd: |
+  H:\Projects\WC26
+---
+PS H:\Projects\WC26>

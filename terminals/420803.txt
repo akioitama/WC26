@@ -1,0 +1,25 @@
+---
+pid: 22040
+cwd: "C:\\Users\\LENOVO\\.cursor\\projects\\h-Projects-WC26"
+command: "Set-Location \"C:\\Users\\LENOVO\\.cursor\\projects\\h-Projects-WC26\"; npm install"
+started_at: 2026-05-13T19:04:22.717Z
+running_for_ms: 346533   
+---
+
+added 370 packages, and audited 371 packages in 5m
+
+147 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+---
+exit_code: 0
+elapsed_ms: 347507
+ended_at: 2026-05-13T19:10:10.224Z
+---
