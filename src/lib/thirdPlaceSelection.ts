@@ -9,7 +9,29 @@ type GroupsFile = {
 
 const data = groupsData as GroupsFile;
 
+/**
+ * Lets the runtime override the group registry (e.g. when users drag teams
+ * around in the alternate-history editor). When unset, defaults to the
+ * shipped JSON data.
+ */
+let runtimeOverride:
+  | ((g: GroupLetter) => string[])
+  | null = null;
+
+export function setGroupTeamsResolver(
+  fn: ((g: GroupLetter) => string[]) | null,
+) {
+  runtimeOverride = fn;
+}
+
 export function getGroupTeamNames(g: GroupLetter): string[] {
+  if (runtimeOverride) {
+    try {
+      return runtimeOverride(g);
+    } catch {
+      /* fall through */
+    }
+  }
   return data.groups[g].teams;
 }
 

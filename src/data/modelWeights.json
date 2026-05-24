@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "trainedAt": "2026-05-24T10:57:41.270Z",
+  "trainedBy": "scripts/train-wc26-model.mjs",
+  "featureNames": [
+    "eloDiff",
+    "fifaRankDiff",
+    "formDiff",
+    "squadRatingDiff",
+    "goalsForDiff",
+    "defenseDiff",
+    "cleanSheetDiff",
+    "wcExpDiff",
+    "homeBoostDiff",
+    "injuryDiff"
+  ],
+  "weights": [
+    2.2565066362715487,
+    0.044871738225602434,
+    0.4436332512705144,
+    0.6425549945214923,
+    -0.006739370454825258,
+    0.026713932472729983,
+    0.10554050552574055,
+    -0.02640027620354026,
+    -0.09929470303326038,
+    1.0276199185055706
+  ],
+  "bias": -0.00000778190588536558,
+  "drawBase": 0.26,
+  "metrics": {
+    "samples": 2352,
+    "teams": 49,
+    "drawTeams": 48,
+    "analyticsProfiles": 10
+  }
+}

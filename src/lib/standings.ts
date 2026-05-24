@@ -58,8 +58,9 @@ function miniLeagueStats(
 function buildRows(
   group: GroupLetter,
   teamNames: string[],
-  scores: Record<string, [number, number] | null>,
+  scores: Record<string, [number, number] | null> | undefined,
 ): TeamStanding[] {
+  const safeScores = scores ?? {};
   const rows: TeamStanding[] = teamNames.map((name, index) => ({
     group,
     index,
@@ -75,7 +76,7 @@ function buildRows(
 
   GROUP_MATCH_PAIRS.forEach((pair, idx) => {
     const [hi, ai] = pair;
-    const sc = scores[matchKey(group, idx)];
+    const sc = safeScores[matchKey(group, idx)];
     if (!sc) return;
     const [gHome, gAway] = sc;
     const home = rows[hi];
@@ -193,8 +194,9 @@ export function createEmptyScores(): Record<string, [number, number] | null> {
 
 export function isGroupComplete(
   group: GroupLetter,
-  scores: Record<string, [number, number] | null>,
+  scores: Record<string, [number, number] | null> | undefined,
 ): boolean {
+  if (!scores) return false;
   for (let i = 0; i < GROUP_MATCH_PAIRS.length; i++) {
     if (scores[matchKey(group, i)] == null) return false;
   }
@@ -202,7 +204,8 @@ export function isGroupComplete(
 }
 
 export function allGroupsFullyScored(
-  scores: Record<string, [number, number] | null>,
+  scores: Record<string, [number, number] | null> | undefined,
 ): boolean {
+  if (!scores) return false;
   return GROUP_LETTERS.every((g) => isGroupComplete(g, scores));
 }
